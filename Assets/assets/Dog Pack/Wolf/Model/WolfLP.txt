@@ -1,0 +1,33 @@
+0000-0000 loop BindPose
+0001-0024 loop Walk
+0026-0035 loop Run
+0037-0336 loop start & End Eating
+0060-0299 loop Eating
+0338-0436 loop Idled
+0438-0461 loop Track
+0463-0491 loop Jump High
+0493-0579 loop Fight Idle
+0580-0624 loop Attack
+0626-0664 loop Lie Down
+0665-0764 loop Rest
+0765-0802 loop Stund Up
+0804-0903 lopp Sleep
+0905-0952 loop Barking/ scare _Wolf
+0954-0974 loop Attack Jump
+0976-1035 loop Simple Idle
+1036-1063 loop Death
+1065-1149 loop Death01
+1151-1169 loop Hit Right
+1170-1189 loop Hit Left
+1190-1209 loop Hit Front
+1210-1229 loop Hit Back
+1230-1249 loop Hit Up
+1251-1279 loop Jump Low
+1281_1294 loop Run Slower
+1296-1523 lopp Shitting
+1524-1655 lopp Pissing
+1656-1760 loop Smell
+1762-1771 loop start Howling
+1772-1807 loop Howling
+1808-1819 loop End Howling
+1821-1919 loop Traping

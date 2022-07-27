@@ -1,0 +1,17 @@
+3d Polygon Model of Treadmill
+
+Features:
+
+Geometry - Polygons  
+(Faces - 2690  Vertices - 2901) 
+
+Available formats  Autodesk FBX, Maya binary .mb, OBJ
+
+Textures done in Photoshop
+
+Rendered using Maya 2011
+
+www.animatedheaven.snappages.com
+
+
+ 
