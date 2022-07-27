@@ -36,7 +36,7 @@ public class TrainDog : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         if (IsTrainingwithTyre)
         {
@@ -50,7 +50,7 @@ public class TrainDog : MonoBehaviour
         {
             if(Input.GetButtonDown("Jump"))
             {
-                CurrentValue += ValueAdded*Time.deltaTime;
+                CurrentValue += ValueAdded * Time.deltaTime;
                 if(CurrentValue > SliderMaxValue)
                 {
                     CurrentValue = SliderMaxValue;
@@ -60,7 +60,7 @@ public class TrainDog : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if(!IsTrainingwithTyre)
         {

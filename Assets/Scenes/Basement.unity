@@ -13989,7 +13989,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 961798022, guid: 761dd8e40b1b41347ab60c108388ed02, type: 3}
       propertyPath: ValueAdded
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 961798022, guid: 761dd8e40b1b41347ab60c108388ed02, type: 3}
       propertyPath: SliderMaxValue
