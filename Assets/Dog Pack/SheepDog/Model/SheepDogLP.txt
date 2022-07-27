@@ -1,0 +1,26 @@
+0000-0000 loop BindPose
+0001-0024 loop Walk
+0026-0035 loop Run
+0037-0336 loop start & End Eating
+0060-0299 loop Eating
+0338-0436 loop Idled
+0438-0461 loop Track
+0463-0491 loop Jump High
+0493-0579 loop Fight Idle
+0580-0624 loop Attack
+0626-0664 loop Lie Down
+0665-0764 loop Rest
+0765-0802 loop Stund Up
+0804-0903 lopp Sleep
+0905-0952 loop Barking
+0954-0974 loop Attack Jump
+0976-1035 loop Simple Idle
+1036-1109 loop Death
+1111-1124 loop Death01
+1126-1145 loop Hit Right
+1146-1165 loop Hit Left
+1166-1185 loop Hit Front
+1186-1205 loop Hit Back
+1230-1249 loop Hit Up
+1207-1235 loop Jump Low
+1237-1250 loop RunSlower

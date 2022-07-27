@@ -1,0 +1,15 @@
+103-123 idle
+053-061 run
+063-103 liedown
+124-166 getup
+167-180 jump
+182-270 hit long
+348-499 fight idle
+096-129 braking
+001-026 walk
+271-288 hit
+289-346 death
+501-527 attack
+033-051 idle2
+528-552 attack2
+552-585 attack3
