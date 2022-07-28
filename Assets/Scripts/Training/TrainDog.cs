@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class TrainDog : MonoBehaviour
 {
+    [Header("Required for both")]
+    [SerializeField] List<GameObject> AllDogs;
+
     [Header("Require for Tire")]
     [SerializeField] float RotatingSpeed = 30;
     [SerializeField] bool IsTrainingwithTyre = false;
@@ -23,6 +26,18 @@ public class TrainDog : MonoBehaviour
         if (IsTrainingwithTyre)
         {
             MyRigidBody = GetComponent<Rigidbody>();
+        }
+        foreach(GameObject i in AllDogs)
+        {
+            i.SetActive(false);
+        }
+        for(int i = 0; i<= AllDogs.Count; i++)
+        {
+            if (i == PlayerPrefs.GetInt("SelectedDog"))
+            {
+                int SelectedDog = i;
+                AllDogs[SelectedDog].SetActive(true);
+            }
         }
     }
 

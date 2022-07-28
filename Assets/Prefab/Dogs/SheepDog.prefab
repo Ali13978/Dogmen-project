@@ -415,7 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4104199634434175178}
   - component: {fileID: 4104199634423117064}
-  - component: {fileID: 242407343589962476}
+  - component: {fileID: 5760522745645601558}
   - component: {fileID: -4779729793687206483}
   m_Layer: 0
   m_Name: SheepDog
@@ -484,7 +484,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!95 &242407343589962476
+--- !u!95 &5760522745645601558
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
