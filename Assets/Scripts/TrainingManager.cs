@@ -1,23 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrainingManager : MonoBehaviour
 {
     [SerializeField] GameObject Tyre;
     [SerializeField] GameObject TreadMill;
-    [SerializeField] GameObject TrainingModeMenu;
-    [SerializeField] GameObject TrainingModeButt;
+    [SerializeField] GameObject TrainingModePannel;
+    [SerializeField] GameObject PausePannel;
     // Start is called before the first frame update
     void Start()
     {
+        PausePannel.SetActive(false);
         TurnOnTrainingModeSelection();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.Escape) && !PausePannel.activeInHierarchy && !TrainingModePannel.activeInHierarchy)
+        {
+            Time.timeScale = 0f;
+            PausePannel.SetActive(true);
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && PausePannel.activeInHierarchy && !TrainingModePannel.activeInHierarchy)
+        {
+            ResumeGame();
+        }
     }
 
     void TurnOffAllMachines()
@@ -30,15 +40,15 @@ public class TrainingManager : MonoBehaviour
     {
         TurnOffAllMachines();
         Tyre.GetComponentInChildren<Animator>().SetBool("IsRunning", false);
-        TrainingModeButt.SetActive(false);
-        TrainingModeMenu.SetActive(true);
+        PausePannel.SetActive(false);
+        Time.timeScale = 1f;
+        TrainingModePannel.SetActive(true);
     }
 
     public void TyreSelected()
     {
         TurnOffAllMachines();
-        TrainingModeMenu.SetActive(false);
-        TrainingModeButt.SetActive(true);
+        TrainingModePannel.SetActive(false);
         Tyre.GetComponentInChildren<Animator>().SetBool("IsSlipped", false);
         Tyre.GetComponentInChildren<Animator>().SetBool("IsRunning", false);
         Tyre.SetActive(true);
@@ -47,11 +57,26 @@ public class TrainingManager : MonoBehaviour
     public void TreadMillSelected()
     {
         TurnOffAllMachines();
-        TrainingModeButt.SetActive(true);
         TreadMill.SetActive(true);
         TreadMill.GetComponent<TrainDog>().CurrentValue = TreadMill.GetComponent<TrainDog>().SliderMaxValue;
         TreadMill.GetComponentInChildren<Animator>().SetBool("IsSlipped", false);
         TreadMill.GetComponentInChildren<Animator>().SetBool("IsRunning", true);
-        TrainingModeMenu.SetActive(false);
+        TrainingModePannel.SetActive(false);
+    }
+
+    public void ResumeGame()
+    {
+        PausePannel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void LoadMainManu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
