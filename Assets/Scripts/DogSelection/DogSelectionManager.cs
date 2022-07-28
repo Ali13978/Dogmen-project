@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class DogSelectionManager : MonoBehaviour
@@ -14,12 +16,19 @@ public class DogSelectionManager : MonoBehaviour
 
     public void ShowSelectDogPannel()
     {
-        foreach(TMP_Text i in SelectButtonTexts)
+        RefreshDogPannel();
+    }
+
+    private void RefreshDogPannel()
+    {
+        foreach (TMP_Text i in SelectButtonTexts)
         {
+            i.transform.parent.GetComponent<Image>().color = Color.white;
             i.text = "Select";
         }
-        SelectButtonTexts[PlayerPrefs.GetInt("SelectedDog")].text = "Selected";
         SelectDogPannel.SetActive(true);
+        SelectButtonTexts[PlayerPrefs.GetInt("SelectedDog")].text = "Selected";
+        SelectButtonTexts[PlayerPrefs.GetInt("SelectedDog")].GetComponentInParent<Button>().gameObject.GetComponent<Image>().color = Color.green;
     }
 
     public void HideSelectDogPannel()
@@ -29,6 +38,11 @@ public class DogSelectionManager : MonoBehaviour
 
     public void SelectDogButton()
     {
-
+        var go = EventSystem.current.currentSelectedGameObject;
+        if (go != null)
+        {
+            PlayerPrefs.SetInt("SelectedDog", go.gameObject.GetComponentInParent<DogSelectionHelper>().IndexInList);
+            RefreshDogPannel();
+        }
     }
 }
