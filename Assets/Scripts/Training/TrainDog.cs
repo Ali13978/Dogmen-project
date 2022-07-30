@@ -7,11 +7,15 @@ public class TrainDog : MonoBehaviour
 {
     [Header("Required for both")]
     [SerializeField] List<GameObject> AllDogs;
+    int SelectedDog;
 
     [Header("Require for Tire")]
     [SerializeField] float RotatingSpeed = 30;
     [SerializeField] bool IsTrainingwithTyre = false;
+    Vector3 Wheelpos;
+    Quaternion WheelRot;
     Rigidbody MyRigidBody;
+    [HideInInspector] public bool AttachedWithTire = false;
 
     [Header("Required For TreadMill")]
     [SerializeField] Slider TreadMillSlider;
@@ -23,21 +27,23 @@ public class TrainDog : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (IsTrainingwithTyre)
-        {
-            MyRigidBody = GetComponent<Rigidbody>();
-        }
-        foreach(GameObject i in AllDogs)
+        foreach (GameObject i in AllDogs)
         {
             i.SetActive(false);
         }
-        for(int i = 0; i<= AllDogs.Count; i++)
+        for (int i = 0; i <= AllDogs.Count; i++)
         {
             if (i == PlayerPrefs.GetInt("SelectedDog"))
             {
-                int SelectedDog = i;
+                SelectedDog = i;
                 AllDogs[SelectedDog].SetActive(true);
             }
+        }
+        if (IsTrainingwithTyre)
+        {
+            MyRigidBody = GetComponent<Rigidbody>();
+            Wheelpos = transform.position;
+            WheelRot = transform.rotation;
         }
     }
 
@@ -55,10 +61,14 @@ public class TrainDog : MonoBehaviour
     {
         if (IsTrainingwithTyre)
         {
-            if (Input.GetAxis("Horizontal") != 0)
+            if(Input.GetButtonDown("Jump"))
+            {
+                AllDogs[SelectedDog].GetComponent<Animator>().SetBool("JumpPressed", true);
+            }
+            if (Input.GetAxis("Horizontal") != 0 && AttachedWithTire)
             {
                 float Speed = RotatingSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
-                MyRigidBody.angularVelocity += new Vector3(0, 0, Speed);
+                MyRigidBody.angularVelocity += new Vector3(Speed, Speed, Speed);
             }
         }
         else
@@ -72,6 +82,24 @@ public class TrainDog : MonoBehaviour
                 }
                 TreadMillSlider.value = CurrentValue; 
             }
+        }
+    }
+
+    public void TurnOnTyreOn()
+    {
+        if (IsTrainingwithTyre)
+        {
+            AllDogs[SelectedDog].GetComponent<Animator>().SetBool("ForTyre", true);
+        }
+    }
+
+    public void ResetWheelTransform()
+    {
+        if(IsTrainingwithTyre)
+        {
+            transform.position = Wheelpos;
+            transform.rotation = WheelRot;
+            MyRigidBody.angularVelocity = Vector3.zero;
         }
     }
 

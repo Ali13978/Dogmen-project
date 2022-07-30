@@ -8,4 +8,12 @@ public class DogHelper : MonoBehaviour
     {
         FindObjectOfType<TrainingManager>().TurnOnTrainingModeSelection();
     }
+    public void StartHorizontalMovement()
+    {
+        transform.parent.parent.GetComponent<TrainDog>().AttachedWithTire = true;
+    }
+    public void TurnOffHorizontalMovement()
+    {
+        transform.parent.parent.GetComponent<TrainDog>().AttachedWithTire = false;
+    }
 }

@@ -38,6 +38,11 @@ public class TrainingManager : MonoBehaviour
 
     public void TurnOnTrainingModeSelection()
     {
+        var objects = FindObjectsOfType<TrainDog>();
+        foreach (var i in objects)
+        {
+            i.GetComponent<TrainDog>().ResetWheelTransform();
+        }
         TurnOffAllMachines();
         Tyre.GetComponentInChildren<Animator>().SetBool("IsRunning", false);
         PausePannel.SetActive(false);
@@ -52,6 +57,11 @@ public class TrainingManager : MonoBehaviour
         Tyre.GetComponentInChildren<Animator>().SetBool("IsSlipped", false);
         Tyre.GetComponentInChildren<Animator>().SetBool("IsRunning", false);
         Tyre.SetActive(true);
+        var objects = FindObjectsOfType<TrainDog>();
+        foreach(var i in objects)
+        {
+            i.GetComponent<TrainDog>().TurnOnTyreOn();
+        }
     }
 
     public void TreadMillSelected()
