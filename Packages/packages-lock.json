@@ -62,8 +62,8 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.probuilder": {
-      "version": "4.5.2",
+    "com.unity.polybrush": {
+      "version": "1.0.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {

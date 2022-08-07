@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -12,7 +13,6 @@ namespace UnityStandardAssets.Cameras
         // 	Camera Rig
         // 		Pivot
         // 			Camera
-
         [SerializeField] private float m_MoveSpeed = 1f;                      // How fast the rig will move to keep up with the target's position.
         [Range(0f, 10f)] [SerializeField] private float m_TurnSpeed = 1.5f;   // How fast the rig will rotate from user input.
         [SerializeField] private float m_TurnSmoothing = 0.0f;                // How much smoothing to apply to the turn input, to reduce mouse-turn jerkiness
@@ -26,7 +26,7 @@ namespace UnityStandardAssets.Cameras
         private const float k_LookDistance = 100f;    // How far in front of the pivot the character's look target is.
 		private Vector3 m_PivotEulers;
 		private Quaternion m_PivotTargetRot;
-		private Quaternion m_TransformTargetRot;
+        private Quaternion m_TransformTargetRot;
 
         protected override void Awake()
         {
@@ -35,7 +35,7 @@ namespace UnityStandardAssets.Cameras
             Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
             Cursor.visible = !m_LockCursor;
 			m_PivotEulers = m_Pivot.rotation.eulerAngles;
-
+            
 	        m_PivotTargetRot = m_Pivot.transform.localRotation;
 			m_TransformTargetRot = transform.localRotation;
         }
