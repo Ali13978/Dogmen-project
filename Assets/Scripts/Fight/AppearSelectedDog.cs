@@ -1,24 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class AppearSelectedDog : MonoBehaviour
+public class AppearSelectedDog : MonoBehaviourPunCallbacks
 {
     [SerializeField] List<GameObject> AllDogs;
     int SelectedDog;
+    [SerializeField] GameObject MyCamera;
+
     private void Awake()
     {
-        foreach (GameObject i in AllDogs)
+        if (photonView.IsMine)
         {
-            i.SetActive(false);
-        }
-        for (int i = 0; i <= AllDogs.Count; i++)
-        {
-            if (i == PlayerPrefs.GetInt("SelectedDog"))
+            foreach (GameObject i in AllDogs)
             {
-                SelectedDog = i;
-                AllDogs[SelectedDog].SetActive(true);
+                i.SetActive(false);
             }
+            for (int i = 0; i <= AllDogs.Count; i++)
+            {
+                if (i == PlayerPrefs.GetInt("SelectedDog"))
+                {
+                    SelectedDog = i;
+                    AllDogs[SelectedDog].SetActive(true);
+                }
+            }
+        }
+        else
+        {
+            Destroy(MyCamera);
         }
     }
 
