@@ -8,11 +8,19 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
 {
     [SerializeField] List<GameObject> AllDogs;
     [SerializeField] GameObject MyCamera;
+    [SerializeField] int Health;
+    [SerializeField] GameObject HitBox;
+    [SerializeField] public int Damage = 10;
+
+    int CurrentHealth;
+    
+    public PhotonView pv;
+
 
 
     private void Awake()
     {
-
+        pv = photonView;
     }
 
     private void Start()
@@ -20,6 +28,9 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
         if (photonView.IsMine)
         {
             ShowSelectedPlayer();
+            UIController.Instance.HealthSlider.maxValue = Health;
+            CurrentHealth = (int)UIController.Instance.HealthSlider.maxValue;
+            UIController.Instance.HealthSlider.value = CurrentHealth;
         }
         else
         {
@@ -27,6 +38,32 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
         }
     }
 
+    [PunRPC]
+    void SyncValues(string _Winnername , GameObject Winpan)
+    {
+        UIController.Instance.WinnerText.text = "Winner is " + _Winnername;
+        Winpan.SetActive(true);
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "HitBox" && other.gameObject != HitBox)
+        {
+            if (photonView.IsMine)
+            {
+                CurrentHealth -= other.GetComponentInParent<AppearSelectedDog>().Damage;
+                if(CurrentHealth > 0)
+                {
+                    UIController.Instance.HealthSlider.value = CurrentHealth;
+                }
+                else
+                {
+                    pv.RPC("SyncValues", RpcTarget.All, photonView.Owner.NickName ,UIController.Instance.WinnerPannel);
+                }
+            }
+        }
+    }
     public Transform SelectedDogTransform()
     {
         return AllDogs[PlayerPrefs.GetInt("SelectedDog")].transform;

@@ -4,20 +4,25 @@ using UnityEngine;
 
 public class HumanController : MonoBehaviour
 {
-    [SerializeField] GameObject Dog;
     Animator MyAnimator;
+
+    private void Awake()
+    {
+        MyAnimator = GetComponent<Animator>();
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    public void leaveDog()
+    private void SetSittingFalse()
     {
-        Dog.transform.parent = transform.parent;
-        Dog.GetComponent<Rigidbody>().isKinematic = false;
-        GetComponent<Animator>().SetBool("IsDogLeft", true);
+        MyAnimator.SetBool("IsSitting", false);
     }
+
 
     // Update is called once per frame
     void Update()
