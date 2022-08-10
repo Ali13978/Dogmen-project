@@ -5,6 +5,7 @@ using UnityEngine;
 public class HumanController : MonoBehaviour
 {
     Animator MyAnimator;
+    [SerializeField] GameObject Dogs;
 
     private void Awake()
     {
@@ -20,6 +21,8 @@ public class HumanController : MonoBehaviour
 
     private void SetSittingFalse()
     {
+        Dogs.transform.parent = transform.parent;
+        Destroy(gameObject);
         MyAnimator.SetBool("IsSitting", false);
     }
 
