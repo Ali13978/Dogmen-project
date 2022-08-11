@@ -9,14 +9,11 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
     [SerializeField] List<GameObject> AllDogs;
     [SerializeField] GameObject MyCamera;
     [SerializeField] int Health;
-    [SerializeField] GameObject HitBox;
-    [SerializeField] public int Damage = 10;
-
     int CurrentHealth;
     
     public PhotonView pv;
 
-
+    string GameOver = "Gamme is Over";
 
     private void Awake()
     {
@@ -38,32 +35,31 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
         }
     }
 
-    [PunRPC]
-    void SyncValues(string _Winnername , GameObject Winpan)
-    {
-        UIController.Instance.WinnerText.text = "Winner is " + _Winnername;
-        Winpan.SetActive(true);
-    }
-
-
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "HitBox" && other.gameObject != HitBox)
+        if(other.gameObject.name == "HitBox" && other.gameObject != GetComponentInChildren<DogController>().HitBox)
         {
             if (photonView.IsMine)
             {
-                CurrentHealth -= other.GetComponentInParent<AppearSelectedDog>().Damage;
+                CurrentHealth -= other.GetComponentInParent<DogController>().Damage;
                 if(CurrentHealth > 0)
                 {
                     UIController.Instance.HealthSlider.value = CurrentHealth;
                 }
                 else
                 {
-                    pv.RPC("SyncValues", RpcTarget.All, photonView.Owner.NickName ,UIController.Instance.WinnerPannel);
+                    pv.RPC("SyncValues", RpcTarget.All, GameOver);
                 }
             }
         }
     }
+    
+    [PunRPC]
+    void SyncValues(string _gameOver)
+    {
+        Debug.Log(_gameOver);
+    }
+
     public Transform SelectedDogTransform()
     {
         return AllDogs[PlayerPrefs.GetInt("SelectedDog")].transform;

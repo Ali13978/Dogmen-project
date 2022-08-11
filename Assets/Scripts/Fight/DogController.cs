@@ -9,6 +9,8 @@ public class DogController : MonoBehaviourPunCallbacks
     public Rigidbody rgd;
     Animator MyAnimator;
     bool IsAttacking = false;
+    [SerializeField] public GameObject HitBox;
+    [SerializeField] public int Damage = 10;
 
     private float Anim_speed;
     private void Awake()
@@ -32,12 +34,21 @@ public class DogController : MonoBehaviourPunCallbacks
 
     void Attack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !IsAttacking)
         {
-            float speed = rgd.velocity.magnitude;
-            Anim_speed = Mathf.Lerp(Anim_speed, speed / 5, Time.deltaTime * 5);
-            MyAnimator.SetFloat("speed", Anim_speed);
             MyAnimator.SetBool("BasicAttack", true);
+            IsAttacking = true;
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            MyAnimator.SetBool("LightAttack-L", true);
+            IsAttacking = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            MyAnimator.SetBool("LightAttack-R", true);
             IsAttacking = true;
         }
     }
@@ -54,6 +65,8 @@ public class DogController : MonoBehaviourPunCallbacks
     {
         IsAttacking = false;
         MyAnimator.SetBool("BasicAttack", false);
+        MyAnimator.SetBool("LightAttack-L", false);
+        MyAnimator.SetBool("LightAttack-R", false);
     }
 
     private void UpdateAnimation()
