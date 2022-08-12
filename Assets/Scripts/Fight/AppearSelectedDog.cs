@@ -31,7 +31,7 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
             UIController.Instance.HealthSlider.maxValue = Health;
             CurrentHealth = (int)UIController.Instance.HealthSlider.maxValue;
             UIController.Instance.HealthSlider.value = CurrentHealth;
-            ShowSelectedPlayer();
+            //ShowSelectedPlayer();
         }
         else
         {
