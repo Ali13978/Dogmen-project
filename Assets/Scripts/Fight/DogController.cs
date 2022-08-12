@@ -27,7 +27,7 @@ public class DogController : MonoBehaviourPunCallbacks
 
     private void GameCompleted()
     {
-        if (pv.IsMine)
+        if (!PhotonNetwork.IsMasterClient && pv.IsMine)
         {
             PhotonNetwork.SetMasterClient(pv.Owner);
         }

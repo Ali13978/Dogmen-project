@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 using System;
 
 public class AppearSelectedDog : MonoBehaviourPunCallbacks
@@ -21,14 +22,16 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
 
     }
 
+
+
     private void Start()
     {
         if (photonView.IsMine)
         {
-            ShowSelectedPlayer();
             UIController.Instance.HealthSlider.maxValue = Health;
             CurrentHealth = (int)UIController.Instance.HealthSlider.maxValue;
             UIController.Instance.HealthSlider.value = CurrentHealth;
+            ShowSelectedPlayer();
         }
         else
         {

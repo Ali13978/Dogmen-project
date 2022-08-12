@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
+using TMPro;
 
-public class TrainingManager : MonoBehaviour
+public class TrainingManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] GameObject Tyre;
     [SerializeField] GameObject TreadMill;
     [SerializeField] GameObject TrainingModePannel;
     [SerializeField] GameObject PausePannel;
+
+    [SerializeField] GameObject LoadingScreen;
+    [SerializeField] TMP_Text LoadingText;
     // Start is called before the first frame update
     void Start()
     {
+        LoadingScreen.SetActive(false);
         PausePannel.SetActive(false);
         TurnOnTrainingModeSelection();
     }
@@ -82,6 +88,8 @@ public class TrainingManager : MonoBehaviour
 
     public void LoadMainManu()
     {
+        LoadingScreen.SetActive(true);
+        LoadingText.text = "Loading MainMenu...";
         SceneManager.LoadScene(0);
     }
 

@@ -56,7 +56,7 @@ public class MainMenuController : MonoBehaviourPunCallbacks
         Cursor.visible = true;
     }
 
-    void CloseMenus()
+    public void CloseMenus()
     {
         loadingScreen.SetActive(false);
         menuButtons.SetActive(false);
@@ -263,6 +263,9 @@ public class MainMenuController : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
+        CloseMenus();
+        loadingScreen.SetActive(true);
+        loadingText.text = "Starting Game...";
         PhotonNetwork.LoadLevel(2);
     }
 
