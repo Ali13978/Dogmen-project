@@ -7,18 +7,37 @@ using Photon.Pun;
 public class DogController : MonoBehaviourPunCallbacks
 {
     public Rigidbody rgd;
-    Animator MyAnimator;
+    public Animator MyAnimator;
     bool IsAttacking = false;
     [SerializeField] public GameObject HitBox;
     [SerializeField] public int Damage = 10;
 
+    [SerializeField] GameObject GameOverPannel;
+
+    [HideInInspector] public PhotonView pv;
+    
     private float Anim_speed;
     private void Awake()
     {
         if (photonView.IsMine)
         {
-            MyAnimator = GetComponent<Animator>();
+            pv = GetComponent<PhotonView>();
         }
+    }
+
+    private void GameCompleted()
+    {
+        if (pv.IsMine)
+        {
+            PhotonNetwork.SetMasterClient(pv.Owner);
+        }
+        PhotonNetwork.LoadLevel(3);
+    }
+
+    [PunRPC]
+    void SyncValues(GameObject _gameOver)
+    {
+        _gameOver.SetActive(true);
     }
 
     // Update is called once per frame
@@ -67,6 +86,13 @@ public class DogController : MonoBehaviourPunCallbacks
         MyAnimator.SetBool("BasicAttack", false);
         MyAnimator.SetBool("LightAttack-L", false);
         MyAnimator.SetBool("LightAttack-R", false);
+    }
+
+    private void TurnOffHitAnim()
+    {
+        GetComponentInParent<AppearSelectedDog>().IsHitted = false;
+        MyAnimator.SetBool("LightHit", false);
+        MyAnimator.SetBool("HeavyHit", false);
     }
 
     private void UpdateAnimation()

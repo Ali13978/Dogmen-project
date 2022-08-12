@@ -7,17 +7,18 @@ using System;
 public class AppearSelectedDog : MonoBehaviourPunCallbacks
 {
     [SerializeField] List<GameObject> AllDogs;
+    [SerializeField] List<Material> DogsMaterials;
+    [SerializeField] GameObject Skin;
     [SerializeField] GameObject MyCamera;
     [SerializeField] int Health;
     int CurrentHealth;
-    
-    public PhotonView pv;
 
-    string GameOver = "Gamme is Over";
+    [HideInInspector] public bool IsHitted = false;
+
 
     private void Awake()
     {
-        pv = photonView;
+
     }
 
     private void Start()
@@ -41,24 +42,34 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
         {
             if (photonView.IsMine)
             {
-                CurrentHealth -= other.GetComponentInParent<DogController>().Damage;
+                if (!IsHitted)
+                {
+                    CurrentHealth -= other.GetComponentInParent<DogController>().Damage;
+                }
+
+                if (other.gameObject.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Arm_Dog_Attack_L") || other.gameObject.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Arm_Dog_Attack_R"))
+                {
+                    IsHitted = true;
+                    GetComponentInChildren<DogController>().MyAnimator.SetBool("LightHit", true);
+                }
+
+                else if (other.gameObject.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Arm_Dog_Attack_J"))
+                {
+                    IsHitted = true;
+                    GetComponentInChildren<DogController>().MyAnimator.SetBool("HeavyHit", true);
+                }
                 if(CurrentHealth > 0)
                 {
                     UIController.Instance.HealthSlider.value = CurrentHealth;
                 }
                 else
                 {
-                    pv.RPC("SyncValues", RpcTarget.All, GameOver);
+                    GetComponentInChildren<DogController>().MyAnimator.SetBool("Died", true);
                 }
             }
         }
     }
     
-    [PunRPC]
-    void SyncValues(string _gameOver)
-    {
-        Debug.Log(_gameOver);
-    }
 
     public Transform SelectedDogTransform()
     {
@@ -67,16 +78,11 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
     
     private void ShowSelectedPlayer()
     {
-        foreach (GameObject i in AllDogs)
+        for (int i = 0; i <= DogsMaterials.Count; i++)
         {
-            i.SetActive(false);
-        }
-        for (int i = 0; i <= AllDogs.Count; i++)
-        {
-            PlayerPrefs.SetInt("SelectedDog", 0);
             if (i == PlayerPrefs.GetInt("SelectedDog"))
             {
-                AllDogs[i].SetActive(true);
+                Skin.GetComponent<Renderer>().material = DogsMaterials[i];
                 break;
             }
         }
