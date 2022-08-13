@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
-using Photon;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -45,6 +44,6 @@ public class PlayerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

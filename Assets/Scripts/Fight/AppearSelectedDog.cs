@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using Photon.Realtime;
 using System;
 
 public class AppearSelectedDog : MonoBehaviourPunCallbacks
@@ -13,6 +12,8 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
     [SerializeField] GameObject MyCamera;
     [SerializeField] int Health;
     int CurrentHealth;
+    
+    string TimerDebugText = "TimerStarted";
 
     [HideInInspector] public bool IsHitted = false;
 
@@ -21,8 +22,6 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
     {
 
     }
-
-
 
     private void Start()
     {
@@ -72,7 +71,7 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
             }
         }
     }
-    
+
 
     public Transform SelectedDogTransform()
     {

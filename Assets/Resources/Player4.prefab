@@ -3668,6 +3668,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 1
     Name: Died
+  - Type: 4
+    SynchronizeType: 1
+    Name: JumpAttack
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
