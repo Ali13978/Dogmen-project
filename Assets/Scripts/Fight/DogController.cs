@@ -59,6 +59,12 @@ public class DogController : MonoBehaviourPunCallbacks
             IsAttacking = true;
         }
 
+        if(Input.GetMouseButtonDown(1) && !IsAttacking)
+        {
+            MyAnimator.SetBool("JumpAttack", true);
+            IsAttacking = true;
+        }
+
         if(Input.GetKeyDown(KeyCode.Q))
         {
             MyAnimator.SetBool("LightAttack-L", true);
@@ -86,6 +92,7 @@ public class DogController : MonoBehaviourPunCallbacks
         MyAnimator.SetBool("BasicAttack", false);
         MyAnimator.SetBool("LightAttack-L", false);
         MyAnimator.SetBool("LightAttack-R", false);
+        MyAnimator.SetBool("JumpAttack", false);
     }
 
     private void TurnOffHitAnim()

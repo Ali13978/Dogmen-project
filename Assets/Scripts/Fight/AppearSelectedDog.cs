@@ -56,7 +56,7 @@ public class AppearSelectedDog : MonoBehaviourPunCallbacks
                     GetComponentInChildren<DogController>().MyAnimator.SetBool("LightHit", true);
                 }
 
-                else if (other.gameObject.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Arm_Dog_Attack_J"))
+                else if (other.gameObject.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Arm_Dog_Attack_J") || other.gameObject.transform.parent.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Arm_Dog_Attack_trot_RM"))
                 {
                     IsHitted = true;
                     GetComponentInChildren<DogController>().MyAnimator.SetBool("HeavyHit", true);
