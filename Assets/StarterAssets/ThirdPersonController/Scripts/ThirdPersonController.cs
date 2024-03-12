@@ -15,6 +15,9 @@ namespace StarterAssets
     public class ThirdPersonController : MonoBehaviour
     {
         [Header("Player")]
+        [Tooltip("Check if Player can is allowed to move")]
+        public bool canMove;
+
         [Tooltip("Move speed of the character in m/s")]
         public float MoveSpeed = 2.0f;
 
@@ -32,7 +35,11 @@ namespace StarterAssets
         public AudioClip[] FootstepAudioClips;
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
 
+
         [Space(10)]
+        [Tooltip("Check if Player can is allowed to jump")]
+        public bool canJump;
+
         [Tooltip("The height the player can jump")]
         public float JumpHeight = 1.2f;
 
@@ -76,6 +83,7 @@ namespace StarterAssets
         public bool LockCameraPosition = false;
 
         // cinemachine
+        public GameObject cinemachineCamera;
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
 
@@ -213,6 +221,8 @@ namespace StarterAssets
 
         private void Move()
         {
+            if (!canMove)
+                return;
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -301,23 +311,26 @@ namespace StarterAssets
                     _verticalVelocity = -2f;
                 }
 
-                // Jump
-                if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+                if (canJump)
                 {
-                    // the square root of H * -2 * G = how much velocity needed to reach desired height
-                    _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
-
-                    // update animator if using character
-                    if (_hasAnimator)
+                    // Jump
+                    if (_input.jump && _jumpTimeoutDelta <= 0.0f)
                     {
-                        _animator.SetBool(_animIDJump, true);
-                    }
-                }
+                        // the square root of H * -2 * G = how much velocity needed to reach desired height
+                        _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
-                // jump timeout
-                if (_jumpTimeoutDelta >= 0.0f)
-                {
-                    _jumpTimeoutDelta -= Time.deltaTime;
+                        // update animator if using character
+                        if (_hasAnimator)
+                        {
+                            _animator.SetBool(_animIDJump, true);
+                        }
+                    }
+
+                    // jump timeout
+                    if (_jumpTimeoutDelta >= 0.0f)
+                    {
+                        _jumpTimeoutDelta -= Time.deltaTime;
+                    }
                 }
             }
             else

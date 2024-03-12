@@ -7,7 +7,6 @@ namespace GleyTrafficSystem
     /// <summary>
     /// Add this script on a vehicle prefab and configure the required parameters
     /// </summary>
-    [RequireComponent(typeof(Rigidbody))]
     public class VehicleComponent : MonoBehaviour
     {
         [Header("Object References")]
@@ -51,8 +50,6 @@ namespace GleyTrafficSystem
         public float coliderHeight = 0;
         [Tooltip("Distance between wheels, used for turning")]
         public float wheelDistance;
-        [Tooltip("Audio for car accecleration")]
-        public AudioClip accelerationAudio;
 
         [HideInInspector]
         public VisibilityScript visibilityScript;
