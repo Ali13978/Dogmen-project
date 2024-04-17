@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ShopKeeper : MonoBehaviour
 {
-    private bool playerInTrigger = true;
+    private bool playerInTrigger = false;
     private ThirdPersonController player;
     [SerializeField] GameObject[] dogsCatalogueObjects;
     [SerializeField] GameObject[] shopKeeperObjects;

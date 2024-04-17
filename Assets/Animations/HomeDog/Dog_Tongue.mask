@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Dog_Tongue
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: base_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/IK_root_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/IK_root_joint/IK_backFoot_L_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/IK_root_joint/IK_backFoot_R_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/IK_root_joint/IK_frontFoot_L_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/IK_root_joint/IK_frontFoot_R_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/backLeg_L0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/backLeg_L0_0_joint/backLeg_L0_1_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/backLeg_L0_0_joint/backLeg_L0_1_joint/backLeg_L0_2_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/backLeg_L0_0_joint/backLeg_L0_1_joint/backLeg_L0_2_joint/backLeg_L0_3_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/backLeg_L0_0_joint/backLeg_L0_1_joint/backLeg_L0_2_joint/backLeg_L0_3_joint/backFoot_L0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/backLeg_R0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/backLeg_R0_0_joint/backLeg_R0_1_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/backLeg_R0_0_joint/backLeg_R0_1_joint/backLeg_R0_2_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/backLeg_R0_0_joint/backLeg_R0_1_joint/backLeg_R0_2_joint/backLeg_R0_3_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/backLeg_R0_0_joint/backLeg_R0_1_joint/backLeg_R0_2_joint/backLeg_R0_3_joint/backFoot_R0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/cornerLip_L0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/cornerLip_R0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/ear_L0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/ear_L0_0_joint/ear_L0_1_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/ear_L0_0_joint/ear_L0_1_joint/ear_L0_2_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/ear_R0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/ear_R0_0_joint/ear_R0_1_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/ear_R0_0_joint/ear_R0_1_joint/ear_R0_2_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/eye_L0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/eye_R0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/jaw_C0_0_joint
+    m_Weight: 1
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/jaw_C0_0_joint/lowerLip_L0_0_joint
+    m_Weight: 1
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/jaw_C0_0_joint/lowerLip_L1_0_joint
+    m_Weight: 1
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/jaw_C0_0_joint/lowerLip_R0_0_joint
+    m_Weight: 1
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/jaw_C0_0_joint/lowerLip_R1_0_joint
+    m_Weight: 1
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/jaw_C0_0_joint/tongue_C0_0_joint
+    m_Weight: 1
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/jaw_C0_0_joint/tongue_C0_0_joint/tongue_C0_1_joint
+    m_Weight: 1
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/jaw_C0_0_joint/tongue_C0_0_joint/tongue_C0_1_joint/tongue_C0_2_joint
+    m_Weight: 1
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/snout_C0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/upperLip_L0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/upperLip_L1_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/upperLip_R0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/neck_C0_0_joint/neck_C0_1_joint/neck_C0_2_joint/neck_C0_3_joint/neck_C0_head_joint/upperLip_R1_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_L0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_L0_0_joint/frontLeg_L0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_L0_0_joint/frontLeg_L0_0_joint/frontLeg_L0_1_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_L0_0_joint/frontLeg_L0_0_joint/frontLeg_L0_1_joint/frontLeg_L0_2_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_L0_0_joint/frontLeg_L0_0_joint/frontLeg_L0_1_joint/frontLeg_L0_2_joint/frontLeg_L0_3_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_L0_0_joint/frontLeg_L0_0_joint/frontLeg_L0_1_joint/frontLeg_L0_2_joint/frontLeg_L0_3_joint/frontFoot_L0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_R0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_R0_0_joint/frontLeg_R0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_R0_0_joint/frontLeg_R0_0_joint/frontLeg_R0_1_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_R0_0_joint/frontLeg_R0_0_joint/frontLeg_R0_1_joint/frontLeg_R0_2_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_R0_0_joint/frontLeg_R0_0_joint/frontLeg_R0_1_joint/frontLeg_R0_2_joint/frontLeg_R0_3_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/spine_C0_0_joint/spine_C0_1_joint/spine_C0_2_joint/spine_C0_3_joint/spine_C0_4_joint/shoulder_R0_0_joint/frontLeg_R0_0_joint/frontLeg_R0_1_joint/frontLeg_R0_2_joint/frontLeg_R0_3_joint/frontFoot_R0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/tail_C0_0_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/tail_C0_0_joint/tail_C0_1_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/tail_C0_0_joint/tail_C0_1_joint/tail_C0_2_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/tail_C0_0_joint/tail_C0_1_joint/tail_C0_2_joint/tail_C0_3_joint
+    m_Weight: 0
+  - m_Path: base_joint/root_joint/spine_C0_hip_joint/tail_C0_0_joint/tail_C0_1_joint/tail_C0_2_joint/tail_C0_3_joint/tail_C0_4_joint
+    m_Weight: 0
+  - m_Path: mesh
+    m_Weight: 0
+  - m_Path: mesh/SK_Animal_Dog_01_Mesh
+    m_Weight: 0

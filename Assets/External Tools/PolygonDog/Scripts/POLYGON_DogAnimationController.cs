@@ -83,7 +83,7 @@ public class POLYGON_DogAnimationController : MonoBehaviour
     public float timeRemaining = 1.0f;
     private int countDown = 1;
     bool Movement_f;
-    bool death_b = false;
+    //bool death_b = false;
     bool Sleep_b = false;
     bool Sit_b = false;
     private float w_movement = 0.0f; // Run value

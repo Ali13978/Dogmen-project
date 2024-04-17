@@ -652,6 +652,7 @@ namespace GleyTrafficSystem
         #endregion
 
 
+        [Obsolete]
         private void FixedUpdate()
         {
             if (!initialized)

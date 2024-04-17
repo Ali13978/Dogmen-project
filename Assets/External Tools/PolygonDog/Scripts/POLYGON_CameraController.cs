@@ -21,7 +21,7 @@ public class POLYGON_CameraController : MonoBehaviour
     Vector3 newPosition;
     Quaternion rotation;
     Quaternion newRotation;
-    Transform camera;
+    new Transform camera;
     // (Move to input script)
     float MouseX;
     void Start()

@@ -6,6 +6,7 @@ using UnityEngine;
 public class ShopDog : MonoBehaviour
 {
     [SerializeField] List<GameObject> AllDogs;
+    [SerializeField] List<DogSO> AllDogsSOs;
     [SerializeField] Animator dogAnim;// Animator for the assigned dog
     private float countDown = 1;
     bool Sit_b = false;
@@ -17,6 +18,8 @@ public class ShopDog : MonoBehaviour
     [SerializeField] ParticleSystem waterFX;
     [SerializeField] Transform fxTransform;
     [SerializeField] Transform fxTail;
+
+    [SerializeField] bool catalogueDog = false;
     private int locomotionLayerIndex;
 
     private int currentIndex;
@@ -44,6 +47,11 @@ public class ShopDog : MonoBehaviour
             dog.SetActive(false);
         }
         AllDogs[currentIndex].SetActive(true);
+
+        if (!catalogueDog)
+            return;
+        DogStatCanvas.Instance.RefreshStatsUI(AllDogsSOs[currentIndex]);
+
     }
 
     #region Actions
@@ -166,6 +174,11 @@ public class ShopDog : MonoBehaviour
             currentIndex = 0;
 
         AllDogs[currentIndex].SetActive(true);
+        DogSO dogSO = DogsSaveLoad.instance.GetDogById(currentIndex);
+        if (dogSO == null)
+            dogSO = AllDogsSOs[currentIndex];
+
+        DogStatCanvas.Instance.RefreshStatsUI(dogSO);
     }
 
     public void PreviousDog()
@@ -180,5 +193,10 @@ public class ShopDog : MonoBehaviour
             currentIndex = AllDogs.Count - 1;
 
         AllDogs[currentIndex].SetActive(true);
+        DogSO dogSO = DogsSaveLoad.instance.GetDogById(currentIndex);
+        if (dogSO == null)
+            dogSO = AllDogsSOs[currentIndex];
+
+        DogStatCanvas.Instance.RefreshStatsUI(dogSO);
     }
 }
