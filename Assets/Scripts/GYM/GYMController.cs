@@ -19,6 +19,7 @@ public class GYMController : MonoBehaviour
     {
         selectedDogSO = dog;
         SetCatalogueObjectsActive(false);
+        PlayerPrefs.SetInt("SelectedDog", dog.index);
         SelectTrainingUI.Instance.EnableSelectTrainingUI();
     }
     public void SetCatalogueObjectsActive(bool isActive)

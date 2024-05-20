@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SelectTrainingUI : MonoBehaviour
@@ -17,16 +19,24 @@ public class SelectTrainingUI : MonoBehaviour
     public GameObject selectTrainingPanel;
     [SerializeField] Button selectTrainingBackBtn;
     [SerializeField] Button selectTreadmill;
+    [SerializeField] Button selectTyreRope;
+    [SerializeField] Button selectFightTraining;
 
     [Header("Treadmill panel")]
     [SerializeField] GameObject treadmillUIPanel;
     [SerializeField] Button treadmillPanelBackBtn;
     [SerializeField] Slider treadmillSlider;
+    [SerializeField] Slider treadmillSpeedSlider;
+
+    [Header("Tyre Rope panel")]
+    [SerializeField] GameObject tyreRopeUIPanel;
+    [SerializeField] Button tyreRopePanelBackBtn;
 
     private void Start()
     {
         InitSelectTrainingBtns();
         InitTreadMillUIBtns();
+        InitTyreRopeUIBtns();
     }
 
     private void InitSelectTrainingBtns()
@@ -44,6 +54,18 @@ public class SelectTrainingUI : MonoBehaviour
             TreadmillController.instance.EnableTreadmill(GYMController.instance.selectedDogSO);
             treadmillSlider.value = 1;
         });
+
+        selectTyreRope.onClick.AddListener(() =>
+        {
+            selectTrainingPanel.SetActive(false);
+            tyreRopeUIPanel.SetActive(true);
+            TyreRopeController.instance.EnableTyreRope(GYMController.instance.selectedDogSO);
+        });
+
+        selectFightTraining.onClick.AddListener(() => 
+        {
+            SceneManager.LoadSceneAsync("FightTraining");
+        });
     }
 
     private void InitTreadMillUIBtns()
@@ -56,6 +78,16 @@ public class SelectTrainingUI : MonoBehaviour
         });
 
         treadmillSlider.value = 1;
+    }
+    
+    private void InitTyreRopeUIBtns()
+    {
+        tyreRopePanelBackBtn.onClick.AddListener(() =>
+        {
+            tyreRopeUIPanel.SetActive(false);
+            selectTrainingPanel.SetActive(true);
+            TyreRopeController.instance.DisableTyreRope();
+        });
     }
 
     public void AddValueToTreadmillSlider(float value)
@@ -70,12 +102,22 @@ public class SelectTrainingUI : MonoBehaviour
     {
         treadmillSlider.value -= value;
 
-        if (treadmillSlider.value < 0)
-            treadmillSlider.value = 0;
+        if (treadmillSlider.value <= 0)
+        {
+            Debug.Log("Treadmill slider elapsed");
+            treadmillUIPanel.SetActive(false);
+            selectTrainingPanel.SetActive(true);
+            TreadmillController.instance.DisableTreadmill();
+        }
     }
 
     public void EnableSelectTrainingUI()
     { 
         selectTrainingPanel.SetActive(true);
+    }
+
+    public void SetTreadmillSpeedSlider(float speedMultiplier)
+    {
+        treadmillSpeedSlider.value = speedMultiplier;
     }
 }

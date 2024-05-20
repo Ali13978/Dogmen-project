@@ -7,20 +7,6 @@ public class TreadmillDog : MonoBehaviour
     [SerializeField] List<GameObject> AllDogs;
     [SerializeField] Animator dogAnim;
 
-    [Header("Particle FX")]
-    [SerializeField] ParticleSystem poopFX;
-    [SerializeField] ParticleSystem dirtFX;
-    [SerializeField] ParticleSystem peeFX;
-    [SerializeField] ParticleSystem waterFX;
-    [SerializeField] Transform fxTransform;
-    [SerializeField] Transform fxTail;
-    private int locomotionLayerIndex;
-
-    private void Awake()
-    {
-        locomotionLayerIndex = dogAnim.GetLayerIndex("Locomotion");
-
-    }
     public void InitDog(DogSO _dog)
     {
         foreach (GameObject dog in AllDogs)
